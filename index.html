@@ -35,7 +35,7 @@ th{color:var(--mut);font-weight:600}
 </div>
 
 <div class="wrap">
-<div class="tabs"><a href="#lock">▣ Lock</a><a href="#negrisk">▣ NegRisk</a></div>
+<div class="tabs"><a href="#lock">▣ Lock</a><a href="#negrisk">▣ NegRisk</a><a href="#redemption">▣ Redemption</a></div>
 
 <section class="panel" id="lock">
   <div class="card">
@@ -58,12 +58,24 @@ th{color:var(--mut);font-weight:600}
   <div class="card">
     <div class="kv" style="margin-bottom:6px">NEGRISK — risk-free multi-outcome arbs (monitor, not executed)</div>
     <div class="row"><div class="kv">distinct arbs seen <b>11</b></div>
-      <div class="kv">observations <b>67</b></div></div>
+      <div class="kv">observations <b>74</b></div></div>
   </div>
   <div class="card"><div class="kv" style="margin-bottom:6px">LIVE / RECENT ARBS</div>
-    <table><tr><th>type</th><th>market</th><th>gap</th><th>net</th><th>baskets</th><th>fill$</th></tr><tr><td>CONVERT</td><td>Highest temperature in Ankara on June 25</td><td class='pos'>+0.019</td><td class='pos'>—</td><td>1.9</td><td>—</td></tr><tr><td>CONVERT</td><td>2026 Midterms: House Popular Vote Margin</td><td class='pos'>+0.017</td><td class='pos'>—</td><td>44.0</td><td>—</td></tr><tr><td>BUY</td><td>Maduro Prison Time?</td><td class='pos'>+0.046</td><td class='pos'>$+0.017</td><td>5.0</td><td>$5</td></tr><tr><td>CONVERT</td><td>Highest temperature in Dallas on June 24</td><td class='pos'>+0.016</td><td class='pos'>—</td><td>12.8</td><td>—</td></tr><tr><td>CONVERT</td><td>Highest temperature in Milan on June 24?</td><td class='pos'>+0.012</td><td class='pos'>—</td><td>13.6</td><td>—</td></tr><tr><td>CONVERT</td><td>Berlin State Election Winner</td><td class='pos'>+0.010</td><td class='pos'>—</td><td>13.0</td><td>—</td></tr><tr><td>CONVERT</td><td>Highest temperature in Mexico City on Ju</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>40.7</td><td>—</td></tr><tr><td>CONVERT</td><td>Elon Musk # tweets June 22 - June 24, 20</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>76.4</td><td>—</td></tr><tr><td>CONVERT</td><td>Brazil Presidential Election</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>48.6</td><td>—</td></tr><tr><td>BUY</td><td>Fed decisions (Apr-Jul)</td><td class='pos'>+0.020</td><td class='pos'>$+0.005</td><td>50.0</td><td>$49</td></tr><tr><td>CONVERT</td><td>Highest temperature in Tokyo on June 25?</td><td class='pos'>+0.004</td><td class='pos'>—</td><td>0.3</td><td>—</td></tr></table>
+    <table><tr><th>type</th><th>market</th><th>gap</th><th>net</th><th>baskets</th><th>fill$</th></tr><tr><td>CONVERT</td><td>Highest temperature in Ankara on June 25</td><td class='pos'>+0.019</td><td class='pos'>—</td><td>1.9</td><td>—</td></tr><tr><td>CONVERT</td><td>2026 Midterms: House Popular Vote Margin</td><td class='pos'>+0.017</td><td class='pos'>—</td><td>44.0</td><td>—</td></tr><tr><td>CONVERT</td><td>Highest temperature in Dallas on June 24</td><td class='pos'>+0.016</td><td class='pos'>—</td><td>12.8</td><td>—</td></tr><tr><td>BUY</td><td>Maduro Prison Time?</td><td class='pos'>+0.045</td><td class='pos'>$+0.016</td><td>20.0</td><td>$19</td></tr><tr><td>CONVERT</td><td>Highest temperature in Milan on June 24?</td><td class='pos'>+0.012</td><td class='pos'>—</td><td>13.6</td><td>—</td></tr><tr><td>CONVERT</td><td>Berlin State Election Winner</td><td class='pos'>+0.010</td><td class='pos'>—</td><td>13.0</td><td>—</td></tr><tr><td>CONVERT</td><td>Highest temperature in Mexico City on Ju</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>40.7</td><td>—</td></tr><tr><td>CONVERT</td><td>Elon Musk # tweets June 22 - June 24, 20</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>76.4</td><td>—</td></tr><tr><td>CONVERT</td><td>Brazil Presidential Election</td><td class='pos'>+0.005</td><td class='pos'>—</td><td>48.6</td><td>—</td></tr><tr><td>BUY</td><td>Fed decisions (Apr-Jul)</td><td class='pos'>+0.020</td><td class='pos'>$+0.005</td><td>50.0</td><td>$49</td></tr><tr><td>CONVERT</td><td>Highest temperature in Tokyo on June 25?</td><td class='pos'>+0.004</td><td class='pos'>—</td><td>0.3</td><td>—</td></tr></table>
     <div class="foot">gap = raw edge · net = after fees (buy-side) · baskets = fillable at top-of-book</div>
   </div>
+</section>
+
+<section class="panel" id="redemption">
+  <div class="card">
+    <div class="kv" style="margin-bottom:6px">REDEMPTION — buy near-certain favorites, hold to $1</div>
+    <div class="row"><div class="big pos">$+0.00</div>
+      <div class="kv">settled <b>0</b></div>
+      <div class="kv">win <b>0%</b></div>
+      <div class="kv">open <b>21</b></div></div>
+  </div>
+  <div class="card"><div class="kv" style="margin-bottom:6px">OPEN POSITIONS (held to resolution)</div>
+    <table><tr><th>side</th><th>market</th><th>entry</th><th>resolves</th></tr><tr><td>NO</td><td>Will Tunisia win on 2026-06-25?</td><td>0.964</td><td class='muted'>2026-06-25</td></tr><tr><td>NO</td><td>Will Elon Musk post 280-299 tweets from Ju</td><td>0.935</td><td class='muted'>2026-06-26</td></tr><tr><td>NO</td><td>Will Scotland win Group C in the 2026 FIFA</td><td>0.981</td><td class='muted'>2026-06-27</td></tr><tr><td>NO</td><td>Will Cape Verde win Group H in the 2026 FI</td><td>0.971</td><td class='muted'>2026-06-27</td></tr><tr><td>NO</td><td>Will Sweden win Group F in the 2026 FIFA W</td><td>0.973</td><td class='muted'>2026-06-27</td></tr><tr><td>NO</td><td>Will Curacao advance to the knockout stage</td><td>0.95</td><td class='muted'>2026-06-28</td></tr><tr><td>NO</td><td>Strait of Hormuz traffic returns to normal</td><td>0.977</td><td class='muted'>2026-06-30</td></tr><tr><td>NO</td><td>U.S. Embassy in Damascus reopened by June </td><td>0.984</td><td class='muted'>2026-06-30</td></tr><tr><td>NO</td><td>Will Netanyahu be pardoned by June 30?</td><td>0.98</td><td class='muted'>2026-06-30</td></tr><tr><td>NO</td><td>Will Silver (SI) hit (LOW) $55 by end of J</td><td>0.934</td><td class='muted'>2026-06-30</td></tr><tr><td>NO</td><td>US x Cuba economic deal by June 30, 2026?</td><td>0.975</td><td class='muted'>2026-06-30</td></tr><tr><td>NO</td><td>Will NVIDIA be the second-largest company </td><td>0.989</td><td class='muted'>2026-06-30</td></tr></table></div>
 </section>
 </div>
 
@@ -71,9 +83,9 @@ th{color:var(--mut);font-weight:600}
   <div class="row">
     <div class="kv">collector <span class="dot g"></span>active</div>
     <div class="kv">lock <span class="dot g"></span>active</div>
-    <div class="kv">load <b>4.40</b></div>
+    <div class="kv">load <b>3.26</b></div>
     <div class="kv">depth today <b>673</b></div>
   </div>
-  <div class="foot">data as of 2026-06-24T02:16:04Z</div>
+  <div class="foot">data as of 2026-06-24T02:18:03Z</div>
 </div>
 </body></html>
