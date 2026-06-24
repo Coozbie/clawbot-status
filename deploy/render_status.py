@@ -73,6 +73,16 @@ def wxrow(p):
 wx_rows = "".join(wxrow(p) for p in wx.get("positions", [])) or '<tr><td colspan="7" class="muted">no live forecast edges</td></tr>'
 wx_pnl = wx.get("pnl", 0); wx_cls = "pos" if wx_pnl >= 0 else "neg"
 
+# ---------- CONVERGENCE panel ----------
+cv = d.get("convergence", {})
+def cvrow(e):
+    pc = "pos" if (e.get("pnl") or 0) > 0 else "neg"
+    return (f"<tr><td>{esc(e.get('side'))}</td><td>{esc(e.get('ask'))}</td><td>{esc(e.get('exit'))}</td>"
+            f"<td>{esc(e.get('reason'))}</td><td>{esc(e.get('move'))}%</td>"
+            f"<td class='{pc}'>${e.get('pnl',0):+.3f}</td></tr>")
+cv_rows = "".join(cvrow(e) for e in cv.get("recent", [])) or '<tr><td colspan="6" class="muted">no trades yet</td></tr>'
+cv_pnl = cv.get("pnl", 0); cv_cls = "pos" if cv_pnl >= 0 else "neg"
+
 svc = d.get("svc", {})
 def badge(s):
     return f'<span class="dot {"g" if s=="active" else "r"}"></span>{esc(s)}'
@@ -114,7 +124,7 @@ th{{color:var(--mut);font-weight:600}}
 </div>
 
 <div class="wrap">
-<div class="tabs"><a href="#lock">▣ Lock</a><a href="#negrisk">▣ NegRisk</a><a href="#redemption">▣ Redemption</a><a href="#weather">▣ Weather</a></div>
+<div class="tabs"><a href="#lock">▣ Lock</a><a href="#negrisk">▣ NegRisk</a><a href="#redemption">▣ Redemption</a><a href="#weather">▣ Weather</a><a href="#convergence">▣ Convergence</a></div>
 
 <section class="panel" id="lock">
   <div class="card">
@@ -172,6 +182,19 @@ th{{color:var(--mut);font-weight:600}}
   </div>
   <div class="card"><div class="kv" style="margin-bottom:6px">OPEN FORECAST BETS · $5 paper each</div>
     <table><tr><th>city</th><th>bucket</th><th>fc</th><th>ask</th><th>stake</th><th>win if hit</th><th>edge</th></tr>{wx_rows}</table></div>
+</section>
+
+<section class="panel" id="convergence">
+  <div class="card">
+    <div class="kv" style="margin-bottom:6px">CONVERGENCE — buy cheap on the move, cash out (BTC · the restored original)</div>
+    <div class="row"><div class="big {cv_cls}">${cv_pnl:+.2f}</div>
+      <div class="kv">trades <b>{cv.get('trades',0)}</b></div>
+      <div class="kv">win <b>{cv.get('win',0)}%</b></div>
+      <div class="kv">per-trade <b>${cv.get('per',0):+.3f}</b></div>
+      <div class="kv">take-profits <b>{cv.get('tp',0)}</b></div></div>
+  </div>
+  <div class="card"><div class="kv" style="margin-bottom:6px">RECENT TRADES (bought cheap → cashed out into the rise)</div>
+    <table><tr><th>side</th><th>buy</th><th>sell</th><th>exit</th><th>move</th><th>P&amp;L</th></tr>{cv_rows}</table></div>
 </section>
 </div>
 

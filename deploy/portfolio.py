@@ -53,11 +53,19 @@ def _weather_settled(data_dir):
                         "won": e["status"] == "won"})
     return out
 
+def _convergence_settled(data_dir):
+    out = []
+    for e in _load(os.path.join(data_dir, "convergence_ledger.jsonl")):
+        if e.get("status") in ("won", "lost") and e.get("pnl") is not None and e.get("slug"):
+            out.append({"module": "convergence", "key": "convergence:" + e["slug"], "pnl": e["pnl"],
+                        "won": e["status"] == "won"})
+    return out
+
 def accumulate(data_dir):
     pp = _persist_path(data_dir)
     have = {r.get("key") for r in _load(pp)}
-    fresh = [r for r in (_lock_settled(data_dir) + _redemption_settled(data_dir) + _weather_settled(data_dir))
-             if r["key"] not in have]
+    fresh = [r for r in (_lock_settled(data_dir) + _redemption_settled(data_dir) + _weather_settled(data_dir)
+                         + _convergence_settled(data_dir)) if r["key"] not in have]
     if fresh:
         ts = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         with open(pp, "a", encoding="utf-8") as fh:
@@ -100,6 +108,8 @@ def compute(data_dir):
         modules.append({"name": "redemption", "kind": "realized", "stat": _stats(by["redemption"])})
     if by.get("weather"):
         modules.append({"name": "weather", "kind": "realized", "stat": _stats(by["weather"])})
+    if by.get("convergence"):
+        modules.append({"name": "convergence", "kind": "realized", "stat": _stats(by["convergence"])})
     modules.append({"name": "negrisk", "kind": "opportunity", "stat": _stats(_negrisk_opp(data_dir))})
     realized = [m for m in modules if m["kind"] == "realized"]
     return {"modules": modules,

@@ -102,12 +102,23 @@ WX = {"open": len(_wpend), "settled": len(_wdone),
       "exp_val": round(sum(p["ev"] for p in _wall), 2),
       "positions": _wall[:12]}
 
+_cv = _loadj(os.path.join(DATA, "convergence_ledger.jsonl"))
+CONV = {"trades": len(_cv),
+        "pnl": round(sum(e.get("pnl") or 0 for e in _cv), 2),
+        "win": round(100 * sum(1 for e in _cv if e.get("status") == "won") / len(_cv)) if _cv else 0,
+        "per": round(sum(e.get("pnl") or 0 for e in _cv) / len(_cv), 3) if _cv else 0,
+        "tp": sum(1 for e in _cv if e.get("reason") == "tp"),
+        "recent": [{"side": e.get("side"), "ask": e.get("entry_ask"), "exit": e.get("exit_bid"),
+                    "reason": e.get("reason"), "move": e.get("move_pct"), "pnl": e.get("pnl")}
+                   for e in _cv[-12:]][::-1]}
+
 status = {
     "ts": sh("date -u +%Y-%m-%dT%H:%M:%SZ"),
     "portfolio": PF,
     "negrisk": NEG,
     "redemption": RED,
     "weather": WX,
+    "convergence": CONV,
     "load": sh("cut -d' ' -f1 /proc/loadavg"),
     "svc": {s: (sh("systemctl is-active " + s) or "unknown")
             for s in ["clawbot-collector", "clawbot-lock-paper"]},
