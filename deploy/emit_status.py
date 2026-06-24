@@ -85,12 +85,22 @@ RED = {"open": len(_rpend), "settled": len(_rdone),
 _wx = _loadj(os.path.join(DATA, "weather_ledger.jsonl"))
 _wdone = [e for e in _wx if e.get("status") in ("won", "lost")]
 _wpend = [e for e in _wx if e.get("status") == "pending"]
+def _wxp(e):
+    ask = e.get("entry_ask") or 0; st = e.get("stake") or 5.0; fc = e.get("fc_prob") or 0
+    fee = st * 0.05 * (1 - ask)
+    pwin = round(st / ask - st - fee, 2) if ask > 0 else 0.0      # paper profit if this bet hits
+    ev = round(fc * pwin + (1 - fc) * (-st - fee), 3)            # forecast-expected value of the bet
+    return {"city": e.get("city"), "date": e.get("date"), "bucket": e.get("bucket"),
+            "forecast": e.get("forecast"), "ask": ask, "edge": e.get("edge"),
+            "stake": round(st, 2), "pwin": pwin, "ev": ev}
+_wall = [_wxp(e) for e in _wpend]
 WX = {"open": len(_wpend), "settled": len(_wdone),
       "pnl": round(sum(e.get("pnl") or 0 for e in _wdone), 2),
       "win": round(100 * sum(1 for e in _wdone if e.get("status") == "won") / len(_wdone)) if _wdone else 0,
-      "positions": [{"city": e.get("city"), "date": e.get("date"), "bucket": e.get("bucket"),
-                     "forecast": e.get("forecast"), "ask": e.get("entry_ask"), "edge": e.get("edge")}
-                    for e in _wpend[:12]]}
+      "staked": round(sum(p["stake"] for p in _wall), 2),
+      "pot_win": round(sum(p["pwin"] for p in _wall), 2),
+      "exp_val": round(sum(p["ev"] for p in _wall), 2),
+      "positions": _wall[:12]}
 
 status = {
     "ts": sh("date -u +%Y-%m-%dT%H:%M:%SZ"),

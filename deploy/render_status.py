@@ -66,10 +66,11 @@ red_pnl = red.get("pnl", 0); red_cls = "pos" if red_pnl >= 0 else "neg"
 # ---------- WEATHER panel ----------
 wx = d.get("weather", {})
 def wxrow(p):
-    return (f"<tr><td>{esc(p.get('city'))}</td><td class='muted'>{esc(p.get('date'))}</td>"
-            f"<td>{esc(p.get('bucket'))}</td><td>{esc(p.get('forecast'))}°</td>"
-            f"<td>{esc(p.get('ask'))}</td><td class='pos'>+{p.get('edge',0):.3f}</td></tr>")
-wx_rows = "".join(wxrow(p) for p in wx.get("positions", [])) or '<tr><td colspan="6" class="muted">no live forecast edges</td></tr>'
+    return (f"<tr><td>{esc(p.get('city'))}</td><td>{esc(p.get('bucket'))}</td>"
+            f"<td>{esc(p.get('forecast'))}°</td><td>{esc(p.get('ask'))}</td>"
+            f"<td>${esc(p.get('stake'))}</td><td class='pos'>+${esc(p.get('pwin'))}</td>"
+            f"<td class='muted'>{p.get('edge',0):+.2f}</td></tr>")
+wx_rows = "".join(wxrow(p) for p in wx.get("positions", [])) or '<tr><td colspan="7" class="muted">no live forecast edges</td></tr>'
 wx_pnl = wx.get("pnl", 0); wx_cls = "pos" if wx_pnl >= 0 else "neg"
 
 svc = d.get("svc", {})
@@ -161,11 +162,16 @@ th{{color:var(--mut);font-weight:600}}
     <div class="kv" style="margin-bottom:6px">WEATHER — forecast-vs-price edge (Open-Meteo)</div>
     <div class="row"><div class="big {wx_cls}">${wx_pnl:+.2f}</div>
       <div class="kv">settled <b>{wx.get('settled',0)}</b></div>
-      <div class="kv">win <b>{wx.get('win',0)}%</b></div>
-      <div class="kv">open <b>{wx.get('open',0)}</b></div></div>
+      <div class="kv">win <b>{wx.get('win',0)}%</b></div></div>
+    <div class="row" style="margin-top:8px">
+      <div class="kv">open bets <b>{wx.get('open',0)}</b></div>
+      <div class="kv">staked <b>${wx.get('staked',0):.0f}</b></div>
+      <div class="kv">max win if all hit <b class="pos">+${wx.get('pot_win',0):.0f}</b></div>
+      <div class="kv">expected value <b>${wx.get('exp_val',0):+.2f}</b></div>
+    </div>
   </div>
-  <div class="card"><div class="kv" style="margin-bottom:6px">OPEN FORECAST BETS (forecast prob beats the price)</div>
-    <table><tr><th>city</th><th>date</th><th>bucket</th><th>fc</th><th>ask</th><th>edge</th></tr>{wx_rows}</table></div>
+  <div class="card"><div class="kv" style="margin-bottom:6px">OPEN FORECAST BETS · $5 paper each</div>
+    <table><tr><th>city</th><th>bucket</th><th>fc</th><th>ask</th><th>stake</th><th>win if hit</th><th>edge</th></tr>{wx_rows}</table></div>
 </section>
 </div>
 
