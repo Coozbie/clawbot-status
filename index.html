@@ -96,16 +96,18 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
 
 <section class="panel" id="weather">
   <div class="card">
-    <div class="kv" style="margin-bottom:6px">WEATHER — forecast-vs-price edge (Open-Meteo)</div>
-    <div class="row"><div class="big pos">$+3.47</div>
-      <div class="kv">settled <b>10</b></div>
-      <div class="kv">win <b>10%</b></div></div>
+    <div class="kv" style="margin-bottom:6px">WEATHER — forecast-vs-price edge · NEW model (calibrated σ + per-city bias)</div>
+    <div class="row"><div class="big pos">$+13.83</div>
+      <div class="kv">new-model re-sim · 8 kept &amp; settled</div>
+      <div class="kv">as-traded <b>$+3.47</b></div></div>
     <div class="row" style="margin-top:8px">
+      <div class="kv">settled <b>10</b></div>
+      <div class="kv">new-model win <b>12%</b></div>
+      <div class="kv">kept <b>149</b> / dropped <b>34</b></div>
       <div class="kv">open bets <b>173</b></div>
-      <div class="kv">staked <b>$865</b></div>
-      <div class="kv">max win if all hit <b class="pos">+$14498</b></div>
-      <div class="kv">expected value <b>$+2149.76</b></div>
     </div>
+    <div class="foot">"new model" re-simulates every bet under the calibrated σ + per-city bias;
+      as-traded = what the old model actually booked. Re-sim refreshes each cycle.</div>
   </div>
   <div class="card"><div class="kv" style="margin-bottom:6px">OPEN FORECAST BETS · $5 paper each</div>
     <div class="tw"><table><tr><th>city</th><th>bucket</th><th class="n">fc</th><th class="n">ask</th><th class="n">stake</th><th class="n">win if hit</th><th class="n">edge</th></tr><tr><td>Houston</td><td>90-91°F</td><td>90.9°</td><td>0.07</td><td>$5.0</td><td class='pos'>+$66.2</td><td class='muted'>+0.20</td></tr><tr><td>Mexico City</td><td>21°C</td><td>21.9°</td><td>0.116</td><td>$5.0</td><td class='pos'>+$37.88</td><td class='muted'>+0.15</td></tr><tr><td>Mexico City</td><td>22°C</td><td>21.9°</td><td>0.21</td><td>$5.0</td><td class='pos'>+$18.61</td><td class='muted'>+0.26</td></tr><tr><td>Ankara</td><td>31°C</td><td>29.2°</td><td>0.028</td><td>$5.0</td><td class='pos'>+$173.33</td><td class='muted'>+0.09</td></tr><tr><td>Dallas</td><td>94-95°F</td><td>94.2°</td><td>0.37</td><td>$5.0</td><td class='pos'>+$8.36</td><td class='muted'>+0.09</td></tr><tr><td>Karachi</td><td>33°C</td><td>32.5°</td><td>0.12</td><td>$5.0</td><td class='pos'>+$36.45</td><td class='muted'>+0.16</td></tr><tr><td>NYC</td><td>60-61°F</td><td>58.8°</td><td>0.028</td><td>$5.0</td><td class='pos'>+$173.33</td><td class='muted'>+0.15</td></tr><tr><td>Warsaw</td><td>28°C</td><td>29.9°</td><td>0.02</td><td>$5.0</td><td class='pos'>+$244.75</td><td class='muted'>+0.09</td></tr><tr><td>Warsaw</td><td>29°C</td><td>29.9°</td><td>0.08</td><td>$5.0</td><td class='pos'>+$57.27</td><td class='muted'>+0.16</td></tr><tr><td>Qingdao</td><td>28°C</td><td>28.9°</td><td>0.052</td><td>$5.0</td><td class='pos'>+$90.92</td><td class='muted'>+0.19</td></tr><tr><td>Qingdao</td><td>29°C</td><td>28.9°</td><td>0.212</td><td>$5.0</td><td class='pos'>+$18.39</td><td class='muted'>+0.09</td></tr><tr><td>Shanghai</td><td>19°C</td><td>20.4°</td><td>0.02</td><td>$5.0</td><td class='pos'>+$244.75</td><td class='muted'>+0.15</td></tr></table></div></div>
@@ -129,9 +131,9 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
   <div class="row">
     <div class="kv">collector <span class="dot g"></span>active</div>
     <div class="kv">lock <span class="dot g"></span>active</div>
-    <div class="kv">load <b>3.79</b></div>
+    <div class="kv">load <b>4.55</b></div>
     <div class="kv">depth today <b></b></div>
   </div>
-  <div class="foot">data as of 2026-06-24T23:35:15Z</div>
+  <div class="foot">data as of 2026-06-24T23:35:48Z</div>
 </div>
 </body></html>
