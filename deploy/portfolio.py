@@ -103,13 +103,8 @@ def compute(data_dir):
     by = {}
     for r in persist:
         by.setdefault(r.get("module"), []).append(r.get("pnl", 0))
-    modules = [{"name": "lock", "kind": "realized", "stat": _stats(by.get("lock", []))}]
-    if by.get("redemption"):
-        modules.append({"name": "redemption", "kind": "realized", "stat": _stats(by["redemption"])})
-    if by.get("weather"):
-        modules.append({"name": "weather", "kind": "realized", "stat": _stats(by["weather"])})
-    if by.get("convergence"):
-        modules.append({"name": "convergence", "kind": "realized", "stat": _stats(by["convergence"])})
+    modules = [{"name": n, "kind": "realized", "stat": _stats(by.get(n, []))}      # always show the full stack
+               for n in ("lock", "convergence", "redemption", "weather")]
     modules.append({"name": "negrisk", "kind": "opportunity", "stat": _stats(_negrisk_opp(data_dir))})
     realized = [m for m in modules if m["kind"] == "realized"]
     return {"modules": modules,
