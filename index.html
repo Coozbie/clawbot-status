@@ -34,7 +34,7 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
   <div class="kv" style="margin-bottom:4px">RESUME — EV is the ruler (win more than you lose)</div>
   <div class="row"><div class="big pos">$+72.37</div>
     <div class="kv">realized paper P&amp;L · 483 trades</div></div>
-  <div class="tw"><table style="margin-top:10px"><tr><th>module</th><th>kind</th><th>n</th><th>P&amp;L</th><th>EV</th><th>95% CI</th><th></th></tr><tr><td><b>lock</b></td><td class='muted'>realized</td><td>352</td><td class='pos'>$+24.26</td><td>$+0.069</td><td class='muted'>[-0.080, +0.218]</td><td><span class="tag est">building</span></td></tr><tr><td><b>convergence</b></td><td class='muted'>realized</td><td>75</td><td class='pos'>$+44.81</td><td>$+0.597</td><td class='muted'>[-0.055, +1.250]</td><td><span class="tag est">building</span></td></tr><tr><td><b>redemption</b></td><td class='muted'>realized</td><td>56</td><td class='pos'>$+3.30</td><td>$+0.059</td><td class='muted'>[-0.199, +0.316]</td><td><span class="tag est">building</span></td></tr><tr><td><b>weather</b></td><td class='muted'>frozen</td><td>130</td><td class='neg'>$-119.84</td><td>$-0.922</td><td class='muted'>[-3.846, +2.002]</td><td><span class="tag est">building</span></td></tr><tr><td><b>negrisk</b></td><td class='muted'>opportunity</td><td>33</td><td class='pos'>$+23.68</td><td>$+0.718</td><td class='muted'>[-0.172, +1.607]</td><td><span class="tag est">building</span></td></tr></table></div>
+  <div class="tw"><table style="margin-top:10px"><tr><th>module</th><th>kind</th><th>n</th><th>P&amp;L</th><th>EV</th><th>95% CI</th><th></th></tr><tr><td><b>lock</b></td><td class='muted'>realized</td><td>352</td><td class='pos'>$+24.26</td><td>$+0.069</td><td class='muted'>[-0.080, +0.218]</td><td><span class="tag est">building</span></td></tr><tr><td><b>convergence</b></td><td class='muted'>realized</td><td>75</td><td class='pos'>$+44.81</td><td>$+0.597</td><td class='muted'>[-0.055, +1.250]</td><td><span class="tag est">building</span></td></tr><tr><td><b>redemption</b></td><td class='muted'>realized</td><td>56</td><td class='pos'>$+3.30</td><td>$+0.059</td><td class='muted'>[-0.199, +0.316]</td><td><span class="tag est">building</span></td></tr><tr><td><b>weather</b></td><td class='muted'>frozen</td><td>132</td><td class='neg'>$-130.32</td><td>$-0.987</td><td class='muted'>[-3.868, +1.894]</td><td><span class="tag est">building</span></td></tr><tr><td><b>negrisk</b></td><td class='muted'>opportunity</td><td>33</td><td class='pos'>$+23.68</td><td>$+0.718</td><td class='muted'>[-0.172, +1.607]</td><td><span class="tag est">building</span></td></tr></table></div>
   <div class="foot">proven +EV (CI &gt; 0): none proven yet — need more volume</div>
 </div>
 
@@ -82,10 +82,10 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
     <div class="row"><div class="big pos">$+3.30</div>
       <div class="kv">settled <b>56</b></div>
       <div class="kv">win <b>96%</b></div>
-      <div class="kv">holding <b>78</b></div></div>
+      <div class="kv">holding <b>79</b></div></div>
     <div class="row" style="margin-top:8px">
-      <div class="kv">staked <b>$390</b></div>
-      <div class="kv">profit if all redeem <b class="pos">+$15.63</b></div>
+      <div class="kv">staked <b>$395</b></div>
+      <div class="kv">profit if all redeem <b class="pos">+$16.06</b></div>
     </div>
     <div class="foot">favorites resolve on their own dates — P&amp;L stays flat until they settle. Not stuck, just waiting.</div>
   </div>
@@ -97,14 +97,14 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
 <section class="panel" id="weather">
   <div class="card">
     <div class="kv" style="margin-bottom:6px">WEATHER — ⏸ FROZEN · no proven edge (validated: profitable configs were overfit to the lucky early sample)</div>
-    <div class="row"><div class="big neg">$-119.84</div>
-      <div class="kv">new-model re-sim · 130 kept &amp; settled</div>
-      <div class="kv">as-traded <b>$-204.74</b></div></div>
+    <div class="row"><div class="big neg">$-130.32</div>
+      <div class="kv">new-model re-sim · 132 kept &amp; settled</div>
+      <div class="kv">as-traded <b>$-215.21</b></div></div>
     <div class="row" style="margin-top:8px">
-      <div class="kv">settled <b>162</b></div>
+      <div class="kv">settled <b>164</b></div>
       <div class="kv">new-model win <b>8%</b></div>
       <div class="kv">kept <b>359</b> / dropped <b>51</b></div>
-      <div class="kv">open bets <b>248</b></div>
+      <div class="kv">open bets <b>246</b></div>
     </div>
     <div class="foot">"new model" re-simulates every bet under the calibrated σ + per-city bias;
       as-traded = what the old model actually booked. Re-sim refreshes each cycle.</div>
@@ -131,9 +131,9 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
   <div class="row">
     <div class="kv">collector <span class="dot g"></span>active</div>
     <div class="kv">lock <span class="dot g"></span>active</div>
-    <div class="kv">load <b>6.03</b></div>
-    <div class="kv">depth today <b></b></div>
+    <div class="kv">load <b>5.00</b></div>
+    <div class="kv">depth today <b>4909</b></div>
   </div>
-  <div class="foot">data as of 2026-06-26T19:31:17Z</div>
+  <div class="foot">data as of 2026-06-26T19:35:55Z</div>
 </div>
 </body></html>
