@@ -27,14 +27,24 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
 .panel{display:none}.panel:target{display:block}
 .wrap:not(:has(.panel:target)) #lock{display:block}
 </style></head><body>
-<h1>CLAWBOT · portfolio <span class="muted">(paper)</span></h1>
-<div class="sub">stack of EV-positive strategies · no real money · updates ~every 5 min</div>
+<h1>CLAWBOT · portfolio <span class="muted">(paper + live)</span></h1>
+<div class="sub">paper stack of EV-positive strategies · a live conv15m bot on a $11 bank · updates ~every 5 min</div>
+
+<div class="card" style="border:1px solid #2f7d4f">
+  <div class="kv" style="margin-bottom:4px">🟢 LIVE BOT — conv15m · REAL money · $11 bank · running</div>
+  <div class="row"><div class="big pos">$+1.43</div>
+    <div class="kv">bank P&amp;L · remaining <b>$12.43</b> of $11</div>
+    <div class="kv">trades <b>9</b> · wins <b class="pos">5</b> / losses <b class="neg">1</b></div>
+    <div class="kv">open <b>3</b> · held-to-settle <b>0</b></div></div>
+  <div class="tw"><table style="margin-top:10px"><tr><th>time (UTC)</th><th>action</th><th>market</th><th>P&amp;L</th></tr><tr><td class='muted'>03:31:41</td><td>BUY</td><td>eth DOWN</td><td class="muted">—</td></tr><tr><td class='muted'>03:30:59</td><td>BUY</td><td>xrp UP</td><td class="muted">—</td></tr><tr><td class='muted'>03:28:17</td><td>BUY</td><td>xrp DOWN</td><td class="muted">—</td></tr><tr><td class='muted'>03:20:14</td><td>SELL</td><td>xrp DOWN</td><td class="pos">$+0.51</td></tr><tr><td class='muted'>03:15:52</td><td>BUY</td><td>xrp DOWN</td><td class="muted">—</td></tr><tr><td class='muted'>03:14:51</td><td>SELL</td><td>eth UP</td><td class="neg">$-0.96</td></tr><tr><td class='muted'>03:12:10</td><td>SELL</td><td>xrp DOWN</td><td class="pos">$+0.48</td></tr><tr><td class='muted'>03:11:30</td><td>SELL</td><td>btc DOWN</td><td class="pos">$+0.55</td></tr><tr><td class='muted'>03:10:29</td><td>BUY</td><td>eth UP</td><td class="muted">—</td></tr><tr><td class='muted'>03:07:08</td><td>SELL</td><td>eth UP</td><td class="pos">$+0.43</td></tr></table></div>
+  <div class="foot">buys the cheap favored side on a confirmed Chainlink move, sells at +0.25 convergence. Hard-stops at −$11.</div>
+</div>
 
 <div class="card">
   <div class="kv" style="margin-bottom:4px">RESUME — EV is the ruler (win more than you lose)</div>
-  <div class="row"><div class="big pos">$+646.91</div>
-    <div class="kv">realized paper P&amp;L · 2548 trades</div></div>
-  <div class="tw"><table style="margin-top:10px"><tr><th>module</th><th>kind</th><th>n</th><th>P&amp;L</th><th>EV</th><th>95% CI</th><th></th></tr><tr><td><b>lock</b></td><td class='muted'>realized</td><td>872</td><td class='neg'>$-1.90</td><td>$-0.002</td><td class='muted'>[-0.107, +0.103]</td><td><span class="tag est">building</span></td></tr><tr><td><b>convergence</b></td><td class='muted'>realized</td><td>563</td><td class='pos'>$+137.68</td><td>$+0.244</td><td class='muted'>[+0.004, +0.485]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>conv15m</b></td><td class='muted'>realized</td><td>419</td><td class='pos'>$+420.15</td><td>$+1.003</td><td class='muted'>[+0.759, +1.247]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>favbias</b></td><td class='muted'>realized</td><td>517</td><td class='pos'>$+66.21</td><td>$+0.128</td><td class='muted'>[+0.005, +0.251]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>redemption</b></td><td class='muted'>realized</td><td>177</td><td class='pos'>$+24.77</td><td>$+0.140</td><td class='muted'>[+0.039, +0.241]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>negrisk</b></td><td class='muted'>opportunity</td><td>73</td><td class='pos'>$+62.36</td><td>$+0.854</td><td class='muted'>[+0.350, +1.358]</td><td><span class="tag bw">PROVEN +EV</span></td></tr></table></div>
+  <div class="row"><div class="big pos">$+651.60</div>
+    <div class="kv">realized paper P&amp;L · 2552 trades</div></div>
+  <div class="tw"><table style="margin-top:10px"><tr><th>module</th><th>kind</th><th>n</th><th>P&amp;L</th><th>EV</th><th>95% CI</th><th></th></tr><tr><td><b>lock</b></td><td class='muted'>realized</td><td>872</td><td class='neg'>$-1.90</td><td>$-0.002</td><td class='muted'>[-0.107, +0.103]</td><td><span class="tag est">building</span></td></tr><tr><td><b>convergence</b></td><td class='muted'>realized</td><td>564</td><td class='pos'>$+140.62</td><td>$+0.249</td><td class='muted'>[+0.009, +0.489]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>conv15m</b></td><td class='muted'>realized</td><td>419</td><td class='pos'>$+420.15</td><td>$+1.003</td><td class='muted'>[+0.759, +1.247]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>favbias</b></td><td class='muted'>realized</td><td>520</td><td class='pos'>$+67.96</td><td>$+0.131</td><td class='muted'>[+0.009, +0.253]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>redemption</b></td><td class='muted'>realized</td><td>177</td><td class='pos'>$+24.77</td><td>$+0.140</td><td class='muted'>[+0.039, +0.241]</td><td><span class="tag bw">PROVEN +EV</span></td></tr><tr><td><b>negrisk</b></td><td class='muted'>opportunity</td><td>73</td><td class='pos'>$+62.36</td><td>$+0.854</td><td class='muted'>[+0.350, +1.358]</td><td><span class="tag bw">PROVEN +EV</span></td></tr></table></div>
   <div class="foot">proven +EV (CI &gt; 0): convergence, conv15m, favbias, redemption, negrisk</div>
 </div>
 
@@ -97,14 +107,14 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
 <section class="panel" id="convergence">
   <div class="card">
     <div class="kv" style="margin-bottom:6px">CONVERGENCE 5m — buy cheap on the move, cash out (btc·xrp·eth)</div>
-    <div class="row"><div class="big pos">$+137.68</div>
-      <div class="kv">trades <b>563</b></div>
+    <div class="row"><div class="big pos">$+140.62</div>
+      <div class="kv">trades <b>564</b></div>
       <div class="kv">win <b>58%</b></div>
-      <div class="kv">per-trade <b>$+0.244</b></div>
-      <div class="kv">take-profits <b>53</b></div></div>
+      <div class="kv">per-trade <b>$+0.249</b></div>
+      <div class="kv">take-profits <b>54</b></div></div>
   </div>
   <div class="card"><div class="kv" style="margin-bottom:6px">RECENT TRADES (bought cheap → cashed out into the rise)</div>
-    <div class="tw"><table><tr><th>side</th><th>buy</th><th>sell</th><th>exit</th><th>move</th><th>P&amp;L</th></tr><tr><td>DOWN</td><td>0.43</td><td>0.04</td><td>flat</td><td>-0.025%</td><td class='neg'>$-4.766</td></tr><tr><td>UP</td><td>0.53</td><td>0.67</td><td>tp</td><td>0.0233%</td><td class='pos'>$+1.010</td></tr><tr><td>UP</td><td>0.51</td><td>0.8</td><td>tp</td><td>0.0439%</td><td class='pos'>$+2.562</td></tr><tr><td>UP</td><td>0.49</td><td>0.73</td><td>tp</td><td>0.0373%</td><td class='pos'>$+2.130</td></tr><tr><td>UP</td><td>0.47</td><td>0.62</td><td>tp</td><td>0.035%</td><td class='pos'>$+1.235</td></tr><tr><td>UP</td><td>0.49</td><td>0.75</td><td>tp</td><td>0.067%</td><td class='pos'>$+2.341</td></tr><tr><td>DOWN</td><td>0.5</td><td>0.63</td><td>tp</td><td>-0.049%</td><td class='pos'>$+0.962</td></tr><tr><td>UP</td><td>0.43</td><td>0.6</td><td>tp</td><td>0.0474%</td><td class='pos'>$+1.582</td></tr><tr><td>UP</td><td>0.28</td><td>0.55</td><td>tp</td><td>0.1013%</td><td class='pos'>$+4.260</td></tr><tr><td>UP</td><td>0.36</td><td>0.7</td><td>tp</td><td>0.0354%</td><td class='pos'>$+4.294</td></tr><tr><td>DOWN</td><td>0.35</td><td>0.57</td><td>tp</td><td>-0.0289%</td><td class='pos'>$+2.670</td></tr><tr><td>DOWN</td><td>0.52</td><td>0.73</td><td>tp</td><td>-0.0218%</td><td class='pos'>$+1.719</td></tr></table></div></div>
+    <div class="tw"><table><tr><th>side</th><th>buy</th><th>sell</th><th>exit</th><th>move</th><th>P&amp;L</th></tr><tr><td>UP</td><td>0.44</td><td>0.73</td><td>tp</td><td>0.0221%</td><td class='pos'>$+2.943</td></tr><tr><td>DOWN</td><td>0.43</td><td>0.04</td><td>flat</td><td>-0.025%</td><td class='neg'>$-4.766</td></tr><tr><td>UP</td><td>0.53</td><td>0.67</td><td>tp</td><td>0.0233%</td><td class='pos'>$+1.010</td></tr><tr><td>UP</td><td>0.51</td><td>0.8</td><td>tp</td><td>0.0439%</td><td class='pos'>$+2.562</td></tr><tr><td>UP</td><td>0.49</td><td>0.73</td><td>tp</td><td>0.0373%</td><td class='pos'>$+2.130</td></tr><tr><td>UP</td><td>0.47</td><td>0.62</td><td>tp</td><td>0.035%</td><td class='pos'>$+1.235</td></tr><tr><td>UP</td><td>0.49</td><td>0.75</td><td>tp</td><td>0.067%</td><td class='pos'>$+2.341</td></tr><tr><td>DOWN</td><td>0.5</td><td>0.63</td><td>tp</td><td>-0.049%</td><td class='pos'>$+0.962</td></tr><tr><td>UP</td><td>0.43</td><td>0.6</td><td>tp</td><td>0.0474%</td><td class='pos'>$+1.582</td></tr><tr><td>UP</td><td>0.28</td><td>0.55</td><td>tp</td><td>0.1013%</td><td class='pos'>$+4.260</td></tr><tr><td>UP</td><td>0.36</td><td>0.7</td><td>tp</td><td>0.0354%</td><td class='pos'>$+4.294</td></tr><tr><td>DOWN</td><td>0.35</td><td>0.57</td><td>tp</td><td>-0.0289%</td><td class='pos'>$+2.670</td></tr></table></div></div>
 </section>
 
 <section class="panel" id="conv15m">
@@ -125,9 +135,9 @@ td,th{padding:5px 6px;font-size:12px}td.t,th.t{min-width:110px}.tabs{flex-wrap:w
   <div class="row">
     <div class="kv">collector <span class="dot g"></span>active</div>
     <div class="kv">lock <span class="dot g"></span>active</div>
-    <div class="kv">load <b>0.39</b></div>
-    <div class="kv">depth today <b>1278</b></div>
+    <div class="kv">load <b>0.27</b></div>
+    <div class="kv">depth today <b>1307</b></div>
   </div>
-  <div class="foot">data as of 2026-07-01T03:27:28Z</div>
+  <div class="foot">data as of 2026-07-01T03:32:29Z</div>
 </div>
 </body></html>
