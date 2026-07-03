@@ -25,42 +25,36 @@ h2{font-size:14px;margin:0 0 8px;color:var(--mut);text-transform:uppercase;lette
 <div class="card">
 <h2>the options — live scoreboard</h2>
 <div class="tw"><table>
-<tr><th>#</th><th class="w">option</th><th>status</th><th class="w">validation numbers (offline)</th><th class="w">live pilot (updates here)</th></tr>
-<tr><td>1</td><td class="w"><b>Lock-yield</b> — buy just-decided markets (book pinned ≥0.995) at ask ≤0.996, collect $1 at resolution</td>
+<tr><th>#</th><th class="w">option</th><th>status</th><th class="w">validation numbers (offline)</th><th class="w">live tracking (updates here)</th></tr>
+<tr><td>1</td><td class="w"><b>Soccer in-play spike-fade</b> — when a side spikes ≥10pts to a price still ≤0.50 (late equalizer euphoria), buy the OTHER side at 0.5–0.9, hold to full time. Mechanism: the draw absorbs the comeback hype</td>
+<td><span class="tag tv">VALIDATED</span></td>
+<td class="w"><b>+28.2%/trade</b>, win 97.6%, CI [+21,+36] match-clustered, n=41 at PROVEN executed prices (79 WC matches). Club-soccer replication: +14% same-sign (n=45). Buying the spike itself loses −55% — the fade is the edge</td>
+<td class="w">forward-confirming on remaining WC matches (to Jul 19) via the in-play collector · 28,398 book snapshots banked</td></tr>
+<tr><td>2</td><td class="w"><b>Lock-yield</b> — buy just-decided markets (book pinned ≥0.995) at ask ≤0.996, collect $1 at resolution</td>
 <td><span class="tag tp">PILOT</span></td>
-<td class="w">Midpoint backtest: fail 0.08%, +0.05%/trade, 1h lockup (11,868 samples). BUT trade-proven re-test on mid-liquidity markets: fail 0.4–1.9% → EV ≤ 0. The book-pin filter is the crux — only the live pilot (real books) can measure it honestly. Demoted until pilot proves it</td>
+<td class="w">Midpoint backtest: fail 0.08%, +0.05%/trade, 1h lockup (11,868 samples). Trade-proven re-test on mid-liquidity markets: fail 0.4–1.9% → EV ≤ 0. The book-pin filter is the crux — only the live pilot can measure it</td>
 <td class="w">settled <b>0</b> · open 10</td></tr>
-<tr><td>2</td><td class="w"><b>Maker dip-buy</b> — longshot pumps ≥10pts/6h → rest bid on the dipped favorite (zero fees)</td>
+<tr><td>3</td><td class="w"><b>Maker dip-buy</b> — longshot pumps ≥10pts/6h → rest bid on the dipped favorite (zero fees)</td>
 <td><span class="tag tp">PILOT</span></td>
-<td class="w">Pattern real: +17%/trade in mids (n=513, CI +9..+25). Maker capture unproven: +1.4% CI spans 0 (n=671). Pilot decides</td>
+<td class="w">Pattern real: +17%/trade in mids (n=513). Maker capture unproven: +1.4% CI spans 0 (n=671). Pilot decides</td>
 <td class="w">settled <b>0</b> · open 0 (0 filled)</td></tr>
-<tr><td>3</td><td class="w"><b>Maker favorite quoting</b> — join bid at 0.93–0.98; taker EV=0 ⇒ maker should earn the spread minus adverse selection</td>
-<td><span class="tag tp">PILOT</span></td>
-<td class="w">Structural thesis; not testable offline (needs real fill flow). Zero fees as maker</td>
-<td class="w">settled <b>0</b> · open 18 (9 filled)</td></tr>
-<tr><td>4</td><td class="w"><b>In-play goal momentum</b> — buy scoring side at real ask after a goal (WC 3-way books)</td>
-<td><span class="tag tp">COLLECTING</span></td>
-<td class="w">n=5 clean goals so far, all profitable — too small. Need n≥50; WC runs to Jul 19</td>
-<td class="w">28,358 book snapshots banked</td></tr>
-<tr><td>5</td><td class="w"><b>Kalshi divergence</b> — trade Polymarket toward Kalshi when they disagree</td>
-<td><span class="tag tp">RESEARCH</span></td>
-<td class="w">Kalshi candles+bid/ask are public (verified). Needs paired-market study; Kalshi is US-KYC → signal-only</td>
-<td class="w">not started</td></tr>
 </table></div>
 <div class="foot">pilot rules: LOCK = paper $1 at the real ask (needs mid≥0.99, depth≥$20, resolves&lt;72h). DIP/FAVQ = paper maker bids, counted as filled ONLY when a real trade crosses the level (honest adverse selection). Settled counters accumulate above.</div>
 </div>
 
 <div class="card">
 <h2>pilot event feed</h2>
-<div class="tw"><table><tr><th>time</th><th>pilot</th><th>event</th><th class="w">detail</th></tr><tr><td class='muted'>07-03 19:31</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.97</td></tr><tr><td class='muted'>07-03 19:31</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.968</td></tr><tr><td class='muted'>07-03 19:28</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will USA win the 2026 FIFA World Cup? @ 0.975</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.931</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Elon Musk post 80-99 tweets from  @ 0.978</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Barbora Krejčíková be the 2026 Wo @ 0.971</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Harry Kane be the top goalscorer  @ 0.942</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Mexico win the 2026 FIFA World Cu @ 0.97</td></tr><tr><td class='muted'>07-03 19:19</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.93</td></tr><tr><td class='muted'>07-03 19:19</td><td>LOCK</td><td>OPEN</td><td class='muted'>Spread: Egypt (-2.5) @ 0.995</td></tr><tr><td class='muted'>07-03 19:17</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.941</td></tr><tr><td class='muted'>07-03 19:17</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.951</td></tr><tr><td class='muted'>07-03 19:15</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.931</td></tr><tr><td class='muted'>07-03 19:15</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Taylor Swift get married in Manha @ 0.95</td></tr><tr><td class='muted'>07-03 19:12</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.976</td></tr><tr><td class='muted'>07-03 19:10</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.965</td></tr></table></div>
+<div class="tw"><table><tr><th>time</th><th>pilot</th><th>event</th><th class="w">detail</th></tr><tr><td class='muted'>07-03 19:38</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.978</td></tr><tr><td class='muted'>07-03 19:31</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.97</td></tr><tr><td class='muted'>07-03 19:31</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.968</td></tr><tr><td class='muted'>07-03 19:28</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will USA win the 2026 FIFA World Cup? @ 0.975</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.931</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Elon Musk post 80-99 tweets from  @ 0.978</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Barbora Krejčíková be the 2026 Wo @ 0.971</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Harry Kane be the top goalscorer  @ 0.942</td></tr><tr><td class='muted'>07-03 19:24</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Mexico win the 2026 FIFA World Cu @ 0.97</td></tr><tr><td class='muted'>07-03 19:19</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.93</td></tr><tr><td class='muted'>07-03 19:19</td><td>LOCK</td><td>OPEN</td><td class='muted'>Spread: Egypt (-2.5) @ 0.995</td></tr><tr><td class='muted'>07-03 19:17</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.941</td></tr><tr><td class='muted'>07-03 19:17</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.951</td></tr><tr><td class='muted'>07-03 19:15</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.931</td></tr><tr><td class='muted'>07-03 19:15</td><td>FAVQ</td><td>OPEN</td><td class='muted'>Will Taylor Swift get married in Manha @ 0.95</td></tr><tr><td class='muted'>07-03 19:12</td><td>FAVQ</td><td>FILL</td><td class='muted'>filled @ 0.976</td></tr></table></div>
 </div>
 
 <div class="card">
 <h2>graveyard — ruled out with data (don't revisit)</h2>
 <div class="kv w">
-Favorite band 0.93–0.98 as taker (EV≈0, n=6,029) · underdogs 0.15–0.25 (noise) · crypto up/down extreme-favorites (n=3,908, ≤0) ·
-NegRisk arb incl. extremes (books tight) · listing mispricing (flat/neg) · whale copy-trading (skill persists but uncopyable: taker −4.6%, maker −4.8%) ·
-retail-stampede fade (n too small, neg) · crypto direction all timeframes (efficient, 6 methods) · weather (overfit) · football model vs market (model bias)
+Favorite band 0.93–0.98 as taker (EV≈0, n=6,029) · <b>maker favorite quoting (adverse selection −3.0%, n=1,414, CI clean negative)</b> ·
+<b>Kalshi divergence (no convergence edge; Polymarket LEADS Kalshi)</b> · <b>in-play goal MOMENTUM (−55% at real prices — the fade is the edge, not the follow)</b> ·
+underdogs 0.15–0.25 (noise) · crypto up/down extreme-favorites (n=3,908, ≤0) · NegRisk arb incl. extremes (books tight) · listing mispricing (flat/neg) ·
+whale copy-trading (skill persists but uncopyable: taker −4.6%, maker −4.8%) · retail-stampede fade (neg) · spike-fade in tennis/esports/MLB (+2% CI spans 0 — soccer-only edge) ·
+crypto direction all timeframes (efficient, 6 methods) · weather (overfit) · football model vs market (model bias)
 </div>
 </div>
-<div class="card"><div class="foot">read-only paper pilots · kill: sudo systemctl stop clawbot-pilots · generated 2026-07-03T19:36:26Z</div></div>
+<div class="card"><div class="foot">read-only paper pilots · kill: sudo systemctl stop clawbot-pilots · generated 2026-07-03T19:38:48Z</div></div>
